@@ -12,9 +12,17 @@ calculateTime = () => {
   // Creăm un array cu zilele săptămânii ca să le putem accesa ulterior prin numărul zilei curente
   var dayNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
+  // Avem nevoie să afişăm ora în format AM/PM, deci avem nevoie de un range de 12 ore. Folosim modulo (%)
+  // Respectiv dacă e ora 17, hour va fi egal cu 5 (restul împărţirii 17 la 12)
   hour = hour % 12;
+  // Pentru cazurile de miazăzi şi miazănoapte, modulo va fi 0, deaceea trebuie să acoperim şi acest scenariu
+  // Dacă e orice oră în afară de 00 şi 12, vom afişa ora dată - deja prin setarea anterioară de modulo
+  // Dacă însă e 00 sau 12 - o să afişăm 12
   hour = hour ? hour : '12';
+  // De asemenea, dorim să afişăm ora mereu prin 2 cifre, respectiv trebuie să acoperim scenariul când ora e 1, 2, 3 - pănâ la 10
+  // şi să afişăm un zero în faţă. În caz contrar (ora 10 / 11 / 12) - afişăm însăşi ora
   hour = hour < 10 ? '0' + hour : hour;
+  // Acelaşi lucru îl aplicăm pentru minute
   minute = minute < 10 ? '0' + minute : minute;
 
   // Targhetăm elementele necesare în pagină şi le completăm cu datele corespunzătoare
