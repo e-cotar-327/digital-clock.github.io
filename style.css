@@ -41,7 +41,7 @@ body {
     top: 50%;
 }
 
-.digitalClock h1 {
+.digitalClock h2 {
     display: inline-block;
     margin: 0 10px;
     font-weight: bold;
@@ -60,7 +60,7 @@ body {
         width: 100%;
     }
 
-    .digitalClock h1 {
+    .digitalClock h2 {
         display: block;
     }
 }
